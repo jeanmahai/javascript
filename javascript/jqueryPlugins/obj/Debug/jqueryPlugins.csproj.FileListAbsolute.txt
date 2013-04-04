@@ -1,0 +1,4 @@
+F:\github\javascript\javascript\jqueryPlugins\bin\jqueryPlugins.dll
+F:\github\javascript\javascript\jqueryPlugins\bin\jqueryPlugins.pdb
+F:\github\javascript\javascript\jqueryPlugins\obj\Debug\jqueryPlugins.dll
+F:\github\javascript\javascript\jqueryPlugins\obj\Debug\jqueryPlugins.pdb

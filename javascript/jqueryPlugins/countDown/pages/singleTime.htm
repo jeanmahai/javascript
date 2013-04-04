@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>单个倒计时</title>
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="../countdown.1.0.js" type="text/javascript"></script>
+</head>
+<body>
+    <div data-role="countdown">
+        <em data-name="day">00</em>天<em data-name="hour">00</em>小时<em data-name="minute">00</em>分<em
+            data-name="second">00</em>秒
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $("div[data-role=countdown]").countDown({
+                time: 1000000000,
+                step: 1000
+            }, true);
+        });
+    </script>
+</body>
+</html>
