@@ -6,12 +6,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>538e7fc7-f5ae-4c1d-87f7-ebd21534acb9</ProjectGuid>
+    <ProjectGuid>{9338DBE6-17F5-4377-96C7-028BC04AC311}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>box2dweb_simulator</RootNamespace>
-    <AssemblyName>box2dweb_simulator</AssemblyName>
+    <AssemblyName>box2dweb-simulator</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
@@ -51,6 +51,80 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="blog\00初识box2dweb.htm" />
+    <Content Include="blog\01初识box2dweb-让IE支持canvas.htm" />
+    <Content Include="CodeGuidline.txt" />
+    <Content Include="images\basketball.png" />
+    <Content Include="images\brick.jpg" />
+    <Content Include="images\Minus_Circle_Green.png" />
+    <Content Include="scripts\00javascript-extend\date-format.js" />
+    <Content Include="scripts\00javascript-extend\date-now.js" />
+    <Content Include="scripts\00javascript-extend\function-bind.js" />
+    <Content Include="scripts\00javascript-extend\function-bind.min.js" />
+    <Content Include="scripts\00javascript-extend\function-bind.yui.js" />
+    <Content Include="scripts\00javascript-extend\javascript-animate.js" />
+    <Content Include="scripts\00javascript-extend\javascript-extend-all.js" />
+    <Content Include="scripts\00javascript-extend\javascript-guid.js" />
+    <Content Include="scripts\00javascript-extend\javascript-namespace.js" />
+    <Content Include="scripts\00javascript-extend\javascript-partial.js" />
+    <Content Include="scripts\00javascript-extend\javascript-simp.js" />
+    <Content Include="scripts\00javascript-extend\object-copy.js" />
+    <Content Include="scripts\00javascript-extend\object-copy.min.js" />
+    <Content Include="scripts\00javascript-extend\object-copy.yui.js" />
+    <Content Include="scripts\00javascript-extend\object-equal.js" />
+    <Content Include="scripts\00javascript-extend\object-extend.js" />
+    <Content Include="scripts\00javascript-extend\string-format.js" />
+    <Content Include="scripts\00javascript-extend\string-format.min.js" />
+    <Content Include="scripts\00javascript-extend\string-format.yui.js" />
+    <Content Include="scripts\10libs\box2dweb\Box2dWeb-2.1.a.3.js" />
+    <Content Include="scripts\10libs\jquery\jquery-1.8.2.min.js" />
+    <Content Include="scripts\20simulate\00simulation.js" />
+    <Content Include="scripts\20simulate\10simulation-config.js" />
+    <Content Include="scripts\20simulate\20simulation-utility.js" />
+    <Content Include="scripts\20simulate\30enum\00contact-filter.js" />
+    <Content Include="scripts\20simulate\30enum\00enum-body-type.js" />
+    <Content Include="scripts\20simulate\30enum\00key.js" />
+    <Content Include="scripts\20simulate\30enum\00mouse-button.js" />
+    <Content Include="scripts\20simulate\30enum\00repetition.js" />
+    <Content Include="scripts\20simulate\30enum\00user-data-type.js" />
+    <Content Include="scripts\20simulate\40models\00components\00ComponentBase.js" />
+    <Content Include="scripts\20simulate\40models\00components\10Circle.js" />
+    <Content Include="scripts\20simulate\40models\00components\10GUIBase.js" />
+    <Content Include="scripts\20simulate\40models\00components\10Polygon.js" />
+    <Content Include="scripts\20simulate\40models\00components\20GUIMessage.js" />
+    <Content Include="scripts\20simulate\40models\00components\20GUIPanel.js" />
+    <Content Include="scripts\20simulate\40models\00components\20Rectangle.js" />
+    <Content Include="scripts\20simulate\40models\00components\30Camera.js" />
+    <Content Include="scripts\20simulate\40models\00components\30GUIDebugPanel.js" />
+    <Content Include="scripts\20simulate\40models\00ContactFilter.js" />
+    <Content Include="scripts\20simulate\40models\00ContactListener.js" />
+    <Content Include="scripts\20simulate\40models\00ImageSource.js" />
+    <Content Include="scripts\20simulate\40models\00Region.js" />
+    <Content Include="scripts\20simulate\40models\00SourceManager.js" />
+    <Content Include="scripts\20simulate\40models\00UserData.js" />
+    <Content Include="scripts\20simulate\40models\10GUIUserData.js" />
+    <Content Include="scripts\20simulate\40models\20GUIUserDataMessage.js" />
+    <Content Include="scripts\20simulate\40models\Collide.js" />
+    <Content Include="scripts\20simulate\40models\Handler.js" />
+    <Content Include="scripts\20simulate\50parts\00gui.js" />
+    <Content Include="scripts\20simulate\50parts\animate.js" />
+    <Content Include="scripts\20simulate\50parts\box2dweb.js" />
+    <Content Include="scripts\20simulate\50parts\common\contextmenu.js" />
+    <Content Include="scripts\20simulate\50parts\common\fullScreen.js" />
+    <Content Include="scripts\20simulate\50parts\event\collide.old.txt" />
+    <Content Include="scripts\20simulate\50parts\event\handler.js" />
+    <Content Include="scripts\20simulate\50parts\input.js" />
+    <Content Include="scripts\20simulate\50parts\loop.js" />
+    <Content Include="scripts\20simulate\50parts\render.js" />
+    <Content Include="scripts\20simulate\50parts\sprite.js" />
+    <Content Include="scripts\20simulate\50parts\utility.old.txt" />
+    <Content Include="scripts\20simulate\simulation.all.js" />
+    <Content Include="scripts\canvasHelper\canvas-helper.js" />
+    <Content Include="test\00simulationTest.htm" />
+    <Content Include="test\01create.htm" />
+    <Content Include="test\02camera-look-at.htm" />
+    <Content Include="test\03refactor-camera.htm" />
+    <Content Include="TODO.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -62,6 +136,16 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="scripts\20simulate\30enum\00draw-type.js.old" />
+    <None Include="scripts\20simulate\50parts\box2ddebug.js.old" />
+    <None Include="scripts\20simulate\50parts\source-manager.js.old" />
+    <Content Include="scripts\20simulate\simulation.chirp.config" />
+    <Content Include="scripts\20simulate\template.chirp.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="scripts\20simulate\50parts\event\gui\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
@@ -70,7 +154,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>2620</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

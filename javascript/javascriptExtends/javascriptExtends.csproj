@@ -51,7 +51,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="js\array.prototype.each.js" />
+    <Content Include="js\array.prototype.remove.js" />
+    <Content Include="js\date.prototype.format.js" />
+    <Content Include="js\function.prototype.bind.js" />
+    <Content Include="js\javascript-namespace.js" />
+    <Content Include="js\javascript-partial.js" />
+    <Content Include="js\json2.js" />
+    <Content Include="js\object-equal.js" />
     <Content Include="js\string.format.js" />
+    <Content Include="js\string.prototy.trim.js" />
+    <Content Include="js\uri.js" />
+    <Content Include="js\window.cancelRequestAnimationFrame.js" />
+    <Content Include="js\window.guid.js" />
+    <Content Include="js\window.requestAnimationFrame.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

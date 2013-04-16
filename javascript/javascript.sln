@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jqueryPlugins", "jqueryPlug
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "javascriptExtends", "javascriptExtends\javascriptExtends.csproj", "{23AEEE47-D672-4BCD-B430-A7C8ECABF757}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "box2dweb-simulator", "box2dweb-simulator\box2dweb-simulator.csproj", "{9338DBE6-17F5-4377-96C7-028BC04AC311}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{23AEEE47-D672-4BCD-B430-A7C8ECABF757}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23AEEE47-D672-4BCD-B430-A7C8ECABF757}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23AEEE47-D672-4BCD-B430-A7C8ECABF757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9338DBE6-17F5-4377-96C7-028BC04AC311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9338DBE6-17F5-4377-96C7-028BC04AC311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9338DBE6-17F5-4377-96C7-028BC04AC311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9338DBE6-17F5-4377-96C7-028BC04AC311}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
