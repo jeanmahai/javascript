@@ -68,10 +68,12 @@ count down
 
         var hour = tag.find("[data-name=hour]");
         if (hour.length > 0) hour.text(obj.hour.leftPad("0", 2));
+		
+		var hourend = tag.find("[data-name=hourend]");
+        if (hourend.length > 0) hourend.text((obj.hour+obj.day*24).leftPad("0", 2));
 
         var minute = tag.find("[data-name=minute]");
         if (minute.length > 0) minute.text(obj.minute.leftPad("0", 2));
-
 
         var second = tag.find("[data-name=second]");
         if (second.length > 0) second.text(obj.second.leftPad("0", 2));
