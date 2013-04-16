@@ -1,0 +1,13 @@
+﻿Simulation.enumDrawType = {
+    //保持原样,原图片是什么样式就绘制成什么样子,不进行处理
+    //sx=0,sy=0,sw=w,sh=h,dx,dy,dw=w,dh=h
+    Normal: 0x1,
+    //原图片是合成图片,包含多个子图片的大图片
+    //提供sx,sy,sw,sh,dx,dy,dw=sy,dh=sh
+    //平铺模式
+    Sprite1: 0x10,
+    //提供sx,sy,sw,sh,dx,dy,dw,dh
+    Sprite2: 0x100,
+    //自定义绘制模式
+    Customer: 0x1000
+};

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>simulation test</title>
+    <style type="text/css">
+        * { padding: 0px; margin: 0px; }
+        body { text-align: center; }
+    </style>
+
+    <script src="../scripts/20simulate/simulation.all.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <div id="container" style="width: 800px; height: 600px; margin-left: auto; margin-right: auto;
+        background-color: gray;">
+    </div>
+    <div style="display: none;" id="divBtns">
+        <input id="btnStart" type="button" value="start" onclick="ins.start()" /><input id="btnStop"
+            type="button" value="stop" onclick="ins.stop()" /></div>
+
+    <script type="text/javascript">
+        var ins = new Simulation();
+        ins.width = 1000;
+        ins.height = 600;
+        ins.setup(document.getElementById("container"));
+        var camera = new Simulation.Components.Camera(800, 600, {});
+        camera.setFixedY(true);
+        ins.setCamera(camera);
+
+        var sourceManager = new Simulation.SourceManage();
+
+        sourceManager.addSourceUrl("circle", "../images/Minus_Circle_Green.png");
+        sourceManager.addSourceUrl("brick", "../images/brick.jpg");
+        sourceManager.download(function () {
+
+            var imgbrick = sourceManager.getById("brick");
+            var brick = new Simulation.Components.Rectangle(imgbrick, {
+                type: Simulation.enumBodyType.static,
+                position: { x: ins.width / 2, y: 580 },
+                size: { width: ins.width, height: 40 }
+            }, null, {
+                repetition: Simulation.repetition.repeat
+            });
+            ins.create(brick);
+
+            brick.setAsBox(100, 40);
+            brick.setPosition(60, 300);
+            ins.create(brick);
+
+            brick.setPosition(20, 300);
+            brick.setAsBox(40, 600);
+            ins.create(brick);
+
+            brick.setPosition(ins.width - 20, 300);
+            ins.create(brick);
+
+            var imgcircle = sourceManager.getById("circle");
+            var circle = new Simulation.Components.Circle(imgcircle, {
+                type: Simulation.enumBodyType.dynamic,
+                position: { x: 400, y: 0 }
+            });
+            var body = ins.create(circle);
+            ins.camera.lookAt(body);
+
+            var handler = new Simulation.OneHandler(function () {
+                body.ApplyForce(new Box2D.Common.Math.b2Vec2(300, 0), body.GetPosition());
+            });
+            ins.addHandler(handler);
+
+            //#region GUIPanel
+            var panel = new Simulation.Components.GUIPanel();
+            ins.create(panel);
+            //#endregion
+
+
+            //ins.disabledContextmenu();
+            document.getElementById("divBtns").style.display = "block";
+        });
+
+    </script>
+
+</body>
+</html>

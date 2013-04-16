@@ -1,0 +1,26 @@
+﻿/// <reference path="../simulation.js" />
+/// <reference path="../javascript-partial.js" />
+/// <reference path="../components/Collide.js" />
+/// <reference path="../../scripts/Box2dWeb-2.1.a.3.js" />
+par(Simulation, function () {
+    var collide = function () {
+        this.collideListener = new Simulation.Collide();
+        this.world.SetContactListener(this.collideListener);
+        //console.info("attach collide");
+    };
+
+    collide.prototype = {
+        //有两个参数,bodya,bodyb
+        //默认情况,相同的group发生碰撞
+        //return true:发生碰撞
+        //return false:没有发生碰撞
+        onBeginCollide: function (fn) {
+            if (typeof (fn) !== "function") {
+                throw "type error";
+            }
+            this.collideListener = fn;
+        }
+    };
+
+    return collide;
+});

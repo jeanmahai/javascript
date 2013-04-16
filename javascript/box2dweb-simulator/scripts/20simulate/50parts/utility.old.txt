@@ -1,0 +1,13 @@
+﻿/// <reference path="../simulation.js" />
+/// <reference path="../javascript-partial.js" />
+/// <reference path="../../scripts/Box2dWeb-2.1.a.3.js" />
+
+
+par(Simulation, function () {
+    var utility = function () {
+    };
+    utility.prototype = {
+
+    };
+    return utility;
+});

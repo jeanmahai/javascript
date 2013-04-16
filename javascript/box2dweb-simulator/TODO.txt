@@ -1,0 +1,20 @@
+﻿1.[完成]把javascript的所有扩展代码移植到[javascript-extend]文件夹下.
+2.优化camera和render
+	为camera添加包围盒,其type=camera,不和其他任何body发生碰撞反应,
+	标记和其发生碰撞的body,isRender=true;在render时,只绘制isRender=true的body,
+	其他的body不绘制.
+	因此camera也是world的一个body.
+3.[重构]对于私有属性和方法添加下划线[_]开头.
+4.render分层优化
+	a.兼容单层模式-->即只有一个canvas进行所有的绘制工作
+	b.支持多层模式-->多个canvas叠加,进行分层绘制,提高效率,可能需要把body按层级进行分组.
+5.GUI设计,可以参考.net控件的结构
+6.切片动画render.
+7.实现部分游戏效果
+	a.爆炸
+8.[分离][createStaticBlock]应该属于component组件,因此应该在simulation之外,作为组件使用.
+9.Joint封装
+10.[完成]工程结构进行了重构,按照功能进行了划分,使用xcopy进行工程之间的引用.
+
+11.[TODO]重构文件/文件夹结构,命名规则:XXFileName,XX代表需要,如10Simulation,文件/文件夹按照优先级进行排序
+                    步长为10.(注意:如果文件夹下的文件没有优先级可以不用设置其排序号码)

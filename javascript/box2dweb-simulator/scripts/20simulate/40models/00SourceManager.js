@@ -1,0 +1,58 @@
+﻿/// <reference path="../00simulation.js" />
+Simulation.SourceManage = function () {
+    this.sourceUrls = [];
+    this.sources = [];
+};
+Simulation.SourceManage.prototype = {
+    addSourceUrl: function (id, url) {
+        this.sourceUrls.push({
+            id: id,
+            url: url
+        });
+    },
+    removeAt: function (index) {
+        if (this.sources[index]) {
+            this.sources[index] = this.sources[this.sources.length - 1];
+            this.sources.pop();
+        }
+    },
+    removeAll: function () {
+        this.sources = null;
+        this.sources = [];
+    },
+    getById: function (id) {
+        var i;
+        for (i = 0; i < this.sources.length; i++) {
+            if (this.sources[i].id === id) {
+                return this.sources[i];
+            }
+        }
+        return null;
+    },
+    download: function (complete, itemComplete) {
+        var i = 0;
+        var img;
+        var me = this;
+        this.sources = new Array(this.sourceUrls.length);
+        var count = 0;
+        for (; i < this.sourceUrls.length; i++) {
+            img = new Image();
+            img.src = this.sourceUrls[i].url;
+            img.index = i;
+            //console.info(this.sourceUrls[i]);
+            img.onload = function () {
+                var j = parseInt(this.index);
+                me.sources[j] = new Simulation.ImageSource(me.sourceUrls[j].id, this); //{ id: me.sourceUrls[j].id, image: this };
+                count++;
+                if (itemComplete) {
+                    itemComplete();
+                }
+                if (count === me.sources.length) {
+                    if (complete) {
+                        complete();
+                    }
+                }
+            };
+        }
+    }
+};

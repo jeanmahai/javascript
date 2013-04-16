@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>simulation test</title>
+    <style type="text/css">
+        body { text-align: center; }
+    </style>
+    <script src="../scripts/20simulate/simulation.all.js" type="text/javascript"></script>
+</head>
+<body>
+    <div>
+        <canvas id="canvas" width="800" height="600" style="background-color: silver;"></canvas>
+    </div>
+    <div style="display: none;" id="divBtns">
+        <input id="btnStart" type="button" value="start" onclick="ins.start()" /><input id="btnStop"
+            type="button" value="stop" onclick="ins.stop()" /></div>
+
+    <script type="text/javascript">
+        var ins = new Simulation();
+        var canvas = document.getElementById("canvas");
+        ins.setup(canvas);
+        ins.sourceManager.addSourceUrl("circle", "../images/Minus_Circle_Green.png");
+        ins.sourceManager.addSourceUrl("brick", "../images/brick.jpg");
+        ins.sourceManager.download(function () {
+            var bodydef = Simulation.newBodyDef();
+            bodydef.type = Box2D.Dynamics.b2Body.b2_staticBody;
+            var fixdef = Simulation.newFixtureDef();
+            fixdef.shape = new Box2D.Collision.Shapes.b2PolygonShape();
+            fixdef.shape.SetAsBox(Simulation.getBox2dValue(400), Simulation.getBox2dValue(20));
+
+            var brick = ins.sourceManager.getById("brick");
+            bodydef.userData = new Simulation.UserData(brick);
+            bodydef.userData.repetition = Simulation.repetition.repeat;
+            var p = Simulation.getBox2dVec2(400, 580);
+            bodydef.position.Set(p.x, p.y);
+            ins.createBody(bodydef, fixdef);
+
+            var imgCircle = ins.sourceManager.getById("circle");
+            bodydef.type = Box2D.Dynamics.b2Body.b2_dynamicBody;
+            var radius = Simulation.getBox2dValue(imgCircle.image.width / 2);
+            fixdef.shape = new Box2D.Collision.Shapes.b2CircleShape(radius);
+            bodydef.userData = new Simulation.UserData(imgCircle);
+            bodydef.userData.repetition = Simulation.repetition.norepeat;
+            p = Simulation.getBox2dVec2(400, 0);
+            bodydef.position.Set(p.x, p.y);
+            ins.createBody(bodydef, fixdef);
+
+            ins.disabledContextmenu();
+            document.getElementById("divBtns").style.display = "block";
+        });
+
+    </script>
+
+</body>
+</html>

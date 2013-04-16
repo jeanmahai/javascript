@@ -1,0 +1,88 @@
+﻿/// <reference path="../simulation.js" />
+/// <reference path="../javascript-partial.js" />
+/// <reference path="box2dweb.js" />
+/// <reference path="../simulation.config.js" />
+/// <reference path="../../scripts/Box2dWeb-2.1.a.3.js" />
+/// <reference path="animate.js" />
+/// <reference path="utility.js" />
+
+par(Simulation, function () {
+    var fn = function () {
+        this.debug = false;
+    };
+    fn.prototype = {
+        initBox2dDebug: function () {
+            //set debug draw
+            var me = this;
+            me.debug = true;
+            var debugDraw = new Box2D.Dynamics.b2DebugDraw();
+            debugDraw.SetSprite(me.ctx);
+            //debugDraw.SetAlpha(0.3);
+            debugDraw.SetFillAlpha(0.5);
+            debugDraw.SetDrawScale(Simulation.config.drawScale);
+            debugDraw.SetFlags(Box2D.Dynamics.b2DebugDraw.e_shapeBit
+                | Box2D.Dynamics.b2DebugDraw.e_centerOfMassBit);
+            me.world.SetDebugDraw(debugDraw);
+        },
+        createCircle: function (radius, x, y) {
+            var fixdef = this.utility.newFixtureDef();
+            fixdef.density = 1;
+            fixdef.friction = 0.5;
+            fixdef.restitution = 0.2;
+            fixdef.shape = new Box2D.Collision.Shapes.b2CircleShape(Simulation.getCanvasValue(radius));
+
+            var bodydef = this.utility.newBodyDef();
+            bodydef.type = Box2D.Dynamics.b2Body.b2_dynamicBody;
+            bodydef.position.Set(Simulation.getCanvasValue(x), Simulation.getCanvasValue(y));
+
+            this.world.CreateBody(bodydef).CreateFixture(fixdef);
+        },
+        createGround: function (flags) {
+            var me = this;
+            var width = me.canvas.width;
+            var height = me.canvas.height;
+            var size = 20;
+
+            var fixDef = new Box2D.Dynamics.b2FixtureDef();
+            fixDef.density = 1.0;
+            fixDef.friction = 0.5;
+            fixDef.restitution = 0.2;
+            fixDef.shape = new Box2D.Collision.Shapes.b2PolygonShape();
+
+            var bodyDef = new Box2D.Dynamics.b2BodyDef();
+            bodyDef.type = Box2D.Dynamics.b2Body.b2_staticBody;
+
+            if (flags & Simulation.GROUND.top) {
+                fixDef.shape.SetAsBox(Simulation.getCanvasValue(width / 2), Simulation.getCanvasValue(size / 2));
+                bodyDef.position.Set(Simulation.getCanvasValue(width / 2), Simulation.getCanvasValue(size / 2));
+                me.world.CreateBody(bodyDef).CreateFixture(fixDef);
+            }
+
+            if (flags & Simulation.GROUND.right) {
+                fixDef.shape.SetAsBox(Simulation.getCanvasValue(size / 2), Simulation.getCanvasValue(height / 2));
+                bodyDef.position.Set(Simulation.getCanvasValue(width - size / 2), Simulation.getCanvasValue(height / 2));
+                me.world.CreateBody(bodyDef).CreateFixture(fixDef);
+            }
+
+            if (flags & Simulation.GROUND.bottom) {
+                fixDef.shape.SetAsBox(Simulation.getCanvasValue(width / 2), Simulation.getCanvasValue(size / 2));
+                bodyDef.position.Set(Simulation.getCanvasValue(width / 2), Simulation.getCanvasValue(height - size / 2));
+                me.world.CreateBody(bodyDef).CreateFixture(fixDef);
+            }
+
+            if (flags & Simulation.GROUND.left) {
+                fixDef.shape.SetAsBox(Simulation.getCanvasValue(size / 2), Simulation.getCanvasValue(height / 2));
+                bodyDef.position.Set(Simulation.getCanvasValue(size / 2), Simulation.getCanvasValue(height / 2));
+                me.world.CreateBody(bodyDef).CreateFixture(fixDef);
+            }
+        }
+    };
+    return fn;
+});
+
+Simulation.GROUND = {
+    top: 0x0001,
+    right: 0x0010,
+    bottom: 0x0100,
+    left: 0x1000
+};

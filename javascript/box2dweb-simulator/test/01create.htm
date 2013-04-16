@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>simulation test</title>
+    <style type="text/css">
+        body { text-align: center; }
+    </style>
+    <script src="../scripts/20simulate/simulation.all.js" type="text/javascript"></script>
+</head>
+<body>
+    <div>
+        <canvas id="canvas" width="800" height="600" style="background-color: silver;"></canvas>
+    </div>
+    <div style="display: none;" id="divBtns">
+        <input id="btnStart" type="button" value="start" onclick="ins.start()" /><input id="btnStop"
+            type="button" value="stop" onclick="ins.stop()" /></div>
+
+    <script type="text/javascript">
+        var ins = new Simulation();
+        var canvas = document.getElementById("canvas");
+        ins.setup(canvas);
+        ins.sourceManager.addSourceUrl("circle", "../images/Minus_Circle_Green.png");
+        ins.sourceManager.addSourceUrl("brick", "../images/brick.jpg");
+        ins.sourceManager.download(function () {
+
+            var imgbrick = ins.sourceManager.getById("brick");
+            var brickUserData = new Simulation.UserData(imgbrick);
+            brickUserData.repetition = Simulation.repetition.repeat;
+            var brick = new Simulation.Components.Polygon();
+            brick.setAsBox(800, 40);
+            brick.setPosition(400, 580);
+            brick.setUserData(brickUserData);
+            brick.setType(Simulation.enumBodyType.static);
+            ins.create(brick);
+
+            brick.setPosition(20, 300);
+            brick.setAsBox(40, 600);
+            ins.create(brick);
+
+            brick.setPosition(780, 300);
+            ins.create(brick);
+
+            var imgcircle = ins.sourceManager.getById("circle");
+            var circle = new Simulation.Components.Circle();
+            circle.setRadius(imgcircle.image.width / 2);
+            circle.setPosition(400, 0);
+            var userdataCircle = new Simulation.UserData(imgcircle);
+            circle.setUserData(userdataCircle);
+            var body = ins.create(circle);
+
+            var handler = new Simulation.OneHandler(function () {
+                body.ApplyForce(new Box2D.Common.Math.b2Vec2(500, 0),body.GetPosition());
+            });
+            ins.addHandler(handler);
+
+            ins.disabledContextmenu();
+            document.getElementById("divBtns").style.display = "block";
+        });
+
+    </script>
+
+</body>
+</html>
