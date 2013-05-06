@@ -51,12 +51,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="countDown\countdown.1.0.js" />
+    <Content Include="countDown\jcountdown.1.0.js" />
     <Content Include="countDown\pages\multStopped.htm" />
     <Content Include="countDown\pages\multTime.htm" />
     <Content Include="countDown\pages\singleTime.htm" />
     <Content Include="countDown\pages\stopped.htm" />
     <Content Include="countDown\index.htm" />
+    <Content Include="jquery\jquery-1.9.1.min.js" />
     <Content Include="jtemplate\jtemplate.1.0.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -69,7 +70,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="editPanel\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
