@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "javascriptExtends", "javasc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "box2dweb-simulator", "box2dweb-simulator\box2dweb-simulator.csproj", "{9338DBE6-17F5-4377-96C7-028BC04AC311}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageManager", "ImageManager\ImageManager.csproj", "{38C56C7E-D613-43E7-B379-9623ABE1E816}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{9338DBE6-17F5-4377-96C7-028BC04AC311}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9338DBE6-17F5-4377-96C7-028BC04AC311}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9338DBE6-17F5-4377-96C7-028BC04AC311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38C56C7E-D613-43E7-B379-9623ABE1E816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C56C7E-D613-43E7-B379-9623ABE1E816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C56C7E-D613-43E7-B379-9623ABE1E816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C56C7E-D613-43E7-B379-9623ABE1E816}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

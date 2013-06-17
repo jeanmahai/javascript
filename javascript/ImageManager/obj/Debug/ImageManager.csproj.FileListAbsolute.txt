@@ -1,0 +1,4 @@
+D:\jean.h.ma\Downloads\github\javascript\javascript\ImageManager\bin\ImageManager.dll
+D:\jean.h.ma\Downloads\github\javascript\javascript\ImageManager\bin\ImageManager.pdb
+D:\jean.h.ma\Downloads\github\javascript\javascript\ImageManager\obj\Debug\ImageManager.dll
+D:\jean.h.ma\Downloads\github\javascript\javascript\ImageManager\obj\Debug\ImageManager.pdb
