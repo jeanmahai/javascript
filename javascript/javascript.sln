@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "box2dweb-simulator", "box2d
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageManager", "ImageManager\ImageManager.csproj", "{38C56C7E-D613-43E7-B379-9623ABE1E816}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "html5.websocket", "html5.websocket\html5.websocket.csproj", "{85505A4C-ECAC-4884-90E8-21F479811DFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jquery.unit.testing", "jquery.unit.testing\jquery.unit.testing.csproj", "{D786E14C-7CFB-4B96-A419-6F15706474F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,14 @@ Global
 		{38C56C7E-D613-43E7-B379-9623ABE1E816}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38C56C7E-D613-43E7-B379-9623ABE1E816}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38C56C7E-D613-43E7-B379-9623ABE1E816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85505A4C-ECAC-4884-90E8-21F479811DFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85505A4C-ECAC-4884-90E8-21F479811DFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85505A4C-ECAC-4884-90E8-21F479811DFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85505A4C-ECAC-4884-90E8-21F479811DFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D786E14C-7CFB-4B96-A419-6F15706474F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D786E14C-7CFB-4B96-A419-6F15706474F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D786E14C-7CFB-4B96-A419-6F15706474F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D786E14C-7CFB-4B96-A419-6F15706474F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
