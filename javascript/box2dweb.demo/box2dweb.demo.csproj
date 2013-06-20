@@ -52,6 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="demos\demo1.htm" />
+    <Content Include="demos\demo2\demo2.htm" />
+    <Content Include="demos\demo2\Simulation.js" />
+    <Content Include="js\AnimationFrame.js" />
     <Content Include="js\Box2dWeb-2.1.a.3.js" />
     <Content Include="style\demo.css" />
     <Content Include="Web.config" />

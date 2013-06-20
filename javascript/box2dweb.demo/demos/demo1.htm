@@ -3,9 +3,86 @@
 <head>
     <title>box2dweb初始</title>
     <link href="../style/demo.css" rel="stylesheet" type="text/css" />
+    <script src="../js/AnimationFrame.js" type="text/javascript"></script>
     <script src="../js/Box2dWeb-2.1.a.3.js" type="text/javascript"></script>
 </head>
 <body>
     <canvas id="canvas" width="800" height="600"></canvas>
+    <script>
+        var ctx = document.getElementById("canvas").getContext("2d");
+
+        var b2body = Box2D.Dynamics.b2Body;
+        var b2bodyDef = Box2D.Dynamics.b2BodyDef;
+
+        var b2fixture = Box2D.Dynamics.b2Fixture;
+        var b2fixtureDef = Box2D.Dynamics.b2FixtureDef;
+
+        var b2world = Box2D.Dynamics.b2World;
+
+        var b2vec = Box2D.Common.Math.b2Vec2;
+        var b2debugDraw = Box2D.Dynamics.b2DebugDraw;
+        var b2polygonShape = Box2D.Collision.Shapes.b2PolygonShape;
+
+        //defined gravity
+        var gravity = new b2vec(0, 10);
+        //defined draw scale
+        var drawScale = 30;
+        //defined step
+        var step = 1 / 60;
+        //defined velocity interation
+        var velocityInteration = 8;
+        //defined position interation
+        var positionInteration = 10;
+        //defined ground
+        var groundBodyDef = new b2bodyDef();
+        groundBodyDef.type = b2body.b2_staticBody;
+        groundBodyDef.position.Set(400 / drawScale, 500 / drawScale);
+        var groundFixDef = new b2fixtureDef();
+        groundFixDef.density = 1;
+        groundFixDef.restitution = 0.2;
+        groundFixDef.friction = 0.5;
+        groundFixDef.shape = new b2polygonShape();
+        groundFixDef.shape.SetAsBox(400 / drawScale, 15 / drawScale);
+
+        //defined cube
+        var cubeBodyDef = new b2bodyDef();
+        cubeBodyDef.type = b2body.b2_dynamicBody;
+        cubeBodyDef.position.Set(400 / drawScale, 0);
+        var cubeFixDef = new b2fixtureDef();
+        cubeFixDef.density = 1;
+        cubeFixDef.friction = 0.5;
+        cubeFixDef.restitution = 0.2;
+        cubeFixDef.shape = new b2polygonShape();
+        cubeFixDef.shape.SetAsBox(30 / drawScale, 30 / drawScale);
+
+        
+        //create world
+        var world = new b2world(gravity, true);
+        //create ground
+        var ground = world.CreateBody(groundBodyDef).CreateFixture(groundFixDef);
+        //create cube
+        var cube = world.CreateBody(cubeBodyDef).CreateFixture(cubeFixDef);
+
+        //defined debug draw
+        var debugDraw = new b2debugDraw();
+        debugDraw.SetSprite(ctx);
+        debugDraw.SetDrawScale(drawScale);
+        debugDraw.SetFillAlpha(0.5);
+        debugDraw.SetAlpha(0.8);
+        debugDraw.SetFlags(b2debugDraw.e_shapeBit | b2debugDraw.e_centerOfMassBit);
+
+        //set debug draw
+        world.SetDebugDraw(debugDraw);
+
+        //loop
+        function loop() {
+            world.Step(step, velocityInteration, positionInteration);
+            world.DrawDebugData();
+            world.ClearForces();
+            requestAnimationFrame(loop);
+        }
+
+        loop();
+    </script>
 </body>
 </html>

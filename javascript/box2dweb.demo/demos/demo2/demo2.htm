@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>简单封装box2dweb</title>
+    <link href="../../style/demo.css" rel="stylesheet" type="text/css" />
+    <script src="../../js/AnimationFrame.js" type="text/javascript"></script>
+    <script src="../../js/Box2dWeb-2.1.a.3.js" type="text/javascript"></script>
+    <script src="Simulation.js" type="text/javascript"></script>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <script>
+        var ctx = document.getElementById("canvas").getContext("2d");
+        
+        var config = new B2Config(new b2vec(0, 10), 1 / 30, 30, 8, 10, true);
+        var simulation = new Simulation(ctx, config);
+        
+        var bodyDef = simulation.createBodyDef(400, 500, b2body.b2_staticBody);
+        var fixtureDef = new b2fixtureDef();
+        fixtureDef.density = 1;
+        fixtureDef.friction = 0.2;
+        fixtureDef.restitution = 0.5;
+        fixtureDef.shape = simulation.createRect(800, 30);
+        var ground = simulation.createBody(bodyDef, fixtureDef);
+        bodyDef = simulation.createBodyDef(400, 0, b2body.b2_dynamicBody);
+        fixtureDef.shape = simulation.createRect(30, 30);
+        var rect = simulation.createBody(bodyDef, fixtureDef);
+        bodyDef = simulation.createBodyDef(300, 0, b2body.b2_dynamicBody);
+        fixtureDef.shape = simulation.createCircle(10);
+        var circle = simulation.createBody(bodyDef, fixtureDef);
+
+        simulation.loop();
+    </script>
+</body>
+</html>
