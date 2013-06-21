@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jquery.unit.testing", "jque
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "box2dweb.demo", "box2dweb.demo\box2dweb.demo.csproj", "{D2464590-8D2C-4F01-87FC-1A4F9CEE1C5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "html.LayoutEngine", "html.LayoutEngine\html.LayoutEngine.csproj", "{84C01501-7B1E-4A44-86E5-E3A0FBBA718E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{D2464590-8D2C-4F01-87FC-1A4F9CEE1C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2464590-8D2C-4F01-87FC-1A4F9CEE1C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2464590-8D2C-4F01-87FC-1A4F9CEE1C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84C01501-7B1E-4A44-86E5-E3A0FBBA718E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84C01501-7B1E-4A44-86E5-E3A0FBBA718E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84C01501-7B1E-4A44-86E5-E3A0FBBA718E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84C01501-7B1E-4A44-86E5-E3A0FBBA718E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
