@@ -1,8 +1,0 @@
-F:\github\javascript\javascript\jqueryPlugins\bin\jqueryPlugins.dll
-F:\github\javascript\javascript\jqueryPlugins\bin\jqueryPlugins.pdb
-F:\github\javascript\javascript\jqueryPlugins\obj\Debug\jqueryPlugins.dll
-F:\github\javascript\javascript\jqueryPlugins\obj\Debug\jqueryPlugins.pdb
-D:\jean.h.ma\Downloads\github\javascript\javascript\jqueryPlugins\bin\jqueryPlugins.dll
-D:\jean.h.ma\Downloads\github\javascript\javascript\jqueryPlugins\bin\jqueryPlugins.pdb
-D:\jean.h.ma\Downloads\github\javascript\javascript\jqueryPlugins\obj\Debug\jqueryPlugins.dll
-D:\jean.h.ma\Downloads\github\javascript\javascript\jqueryPlugins\obj\Debug\jqueryPlugins.pdb
