@@ -1,4 +1,0 @@
-D:\jean.h.ma\Downloads\github\javascript\javascript\box2dweb.demo\bin\box2dweb.demo.dll
-D:\jean.h.ma\Downloads\github\javascript\javascript\box2dweb.demo\bin\box2dweb.demo.pdb
-D:\jean.h.ma\Downloads\github\javascript\javascript\box2dweb.demo\obj\Debug\box2dweb.demo.dll
-D:\jean.h.ma\Downloads\github\javascript\javascript\box2dweb.demo\obj\Debug\box2dweb.demo.pdb

@@ -1,4 +1,0 @@
-D:\jean.h.ma\Downloads\github\javascript\javascript\box2dweb-simulator\bin\box2dweb-simulator.dll
-D:\jean.h.ma\Downloads\github\javascript\javascript\box2dweb-simulator\bin\box2dweb-simulator.pdb
-D:\jean.h.ma\Downloads\github\javascript\javascript\box2dweb-simulator\obj\Debug\box2dweb-simulator.dll
-D:\jean.h.ma\Downloads\github\javascript\javascript\box2dweb-simulator\obj\Debug\box2dweb-simulator.pdb

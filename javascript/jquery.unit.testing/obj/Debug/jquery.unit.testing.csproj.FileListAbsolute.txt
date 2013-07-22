@@ -1,4 +1,0 @@
-D:\jean.h.ma\Downloads\github\javascript\javascript\jquery.unit.testing\bin\jquery.unit.testing.dll
-D:\jean.h.ma\Downloads\github\javascript\javascript\jquery.unit.testing\bin\jquery.unit.testing.pdb
-D:\jean.h.ma\Downloads\github\javascript\javascript\jquery.unit.testing\obj\Debug\jquery.unit.testing.dll
-D:\jean.h.ma\Downloads\github\javascript\javascript\jquery.unit.testing\obj\Debug\jquery.unit.testing.pdb
