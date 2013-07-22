@@ -1,1 +1,5 @@
 javascript/_ReSharper.javascript/*
+obj/
+bin/
+*.suo
+_ReSharper*/
