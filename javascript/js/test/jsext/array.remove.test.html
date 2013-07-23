@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../libs/jqext/qunit-1.11.0.css" rel="stylesheet" type="text/css" />
+    <script src="../../libs/jqext/qunit-1.11.0.js" type="text/javascript"></script>
+    <script src="../../libs/jsext/array.prototype.remove.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="qunit">
+    </div>
+    <div id="qunit-fixture">
+    </div>
+    <script>
+        var arr = [1, 2, 3, 4, 5, 6];
+        var len = arr.length;
+        arr.remove(function (item) {
+            if (item == 3) return true;
+            return false;
+        });
+        test("test array remove", function () {
+            ok((len - 1) == arr.length, "passed");
+        });
+    </script>
+</body>
+</html>

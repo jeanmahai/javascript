@@ -61,17 +61,18 @@
     <Content Include="libs\jsext\array.prototype.remove.js" />
     <Content Include="libs\jsext\date.prototype.format.js" />
     <Content Include="libs\jsext\function.prototype.bind.js" />
-    <Content Include="libs\jsext\javascript-namespace.js" />
-    <Content Include="libs\jsext\javascript-partial.js" />
-    <Content Include="libs\jsext\json2.js" />
+    <Content Include="libs\tools\json2.js" />
     <Content Include="libs\jsext\object-equal.js" />
     <Content Include="libs\jsext\string.format.js" />
     <Content Include="libs\jsext\string.prototy.trim.js" />
-    <Content Include="libs\jsext\uri.js" />
+    <Content Include="libs\tools\uri.js" />
     <Content Include="libs\jsext\window.cancelRequestAnimationFrame.js" />
     <Content Include="libs\jsext\window.guid.js" />
     <Content Include="libs\jsext\window.requestAnimationFrame.js" />
     <Content Include="libs\tools\image-manager.yui.js" />
+    <Content Include="test\jsext\array.remove.test.html" />
+    <Content Include="test\jsext\guid.test.html" />
+    <Content Include="test\jsext\string.format.test.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -85,7 +86,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="test\jqext\" />
-    <Folder Include="test\jsext\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

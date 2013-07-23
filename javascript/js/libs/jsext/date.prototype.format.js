@@ -126,11 +126,6 @@
             return dateFormat(this, mask, utc);
         };
     }
-    else {
-        if (console) {
-            console.warn("function [Date.property.format] was existed.");
-        }
-    }
 
 })();
 

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../libs/jsext/string.format.js" type="text/javascript"></script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>format string:<input type="text" id="txtFS" style="width: 100%;" value="my name is {0},sex {2},age {1}"/></li>
+            <li>params:<input type="text" id="txtP" style="width: 100%;" value="jean,27,male"/></li>
+            <li>result:<input type="text" id="txtR" style="width: 100%;"/></li>
+            <li><button onclick="f()">format</button></li>
+        </ul>
+    </div>
+    <script>
+        function f() {
+            var r = document.getElementById("txtR");
+            var p = document.getElementById("txtP");
+            var fs = document.getElementById("txtFS");
+            r.value = String.format(fs.value, p.value.split(","));
+        }
+    </script>
+</body>
+</html>

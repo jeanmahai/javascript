@@ -5,13 +5,13 @@
     function newguid() {
         var result = [];
         var i;
-        var count = 3;
+        var count = 4;
         result.push(g());
         count--;
         for (i = 0; i < count; i++) {
             result.push(g());
         }
-        return result.join("");
+        return result.join("-");
     }
     if (!window["newguid"]) {
         window["newguid"] = newguid;
