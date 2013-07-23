@@ -40,25 +40,38 @@ data-height:10=10px/10*=最小10px,如果还有空间,则填满/auto=自动填�
             });
             var caculate = function (index, target) {
                 var p = target.parent();
-                //不包括border,padding-top,padding-bottom
-                var innerHeight;
+                //不包括border,padding-top,padding-bottom,margin-top,margin-bottom
+                var contentHeight;
                 if (p.is("html")) {
-                    innerHeight = $(window).height();
+                    var dom_body = $(document.body);
+                    contentHeight = $(window).height()
+                        - parseInt(dom_body.css("padding-top"))
+                        - parseInt(dom_body.css("padding-bottom"))
+                        - parseInt(dom_body.css("margin-top"))
+                        - parseInt(dom_body.css("margin-bottom"))
+                        - parseInt(dom_body.css("border-top-width"))
+                        - parseInt(dom_body.css("border-bottom-width"));
                 }
                 else {
-                    innerHeight = p.innerHeight() - parseInt(p.css("padding-top")) - parseInt(p.css("padding-bottom"));
+                    contentHeight = p.innerHeight()
+                        - parseInt(p.css("padding-top"))
+                        - parseInt(p.css("padding-bottom"))
+                        - parseInt(p.css("margin-top"))
+                        - parseInt(p.css("margin-bottom"))
+                        - parseInt(p.css("border-top-width"))
+                        - parseInt(p.css("border-bottom-width"));
                 }
                 var dh = target.attr("data-height");
                 //填满
                 if (/^auto$/i.test(dh)) {
-                    target.height(innerHeight - _getNextHeight(target) - _getPrevHeight(target));
+                    target.height(contentHeight - _getNextHeight(target) - _getPrevHeight(target));
                 }
                 if (/^[0-9]+$/.test(dh)) {
                     target.height(parseInt(dh));
                 }
                 //最小是前面的数字,如果当前剩下的空间不够,则设置为数字大小,如果空间有多余,则充满
                 if (/^[0-9]+\*$/.test(dh)) {
-                    var leftH = innerHeight - _getNextHeight(target) - _getPrevHeight(target);
+                    var leftH = contentHeight - _getNextHeight(target) - _getPrevHeight(target);
                     var th = parseInt(dh);
                     if (leftH <= th) {
                         target.height(th);
@@ -68,7 +81,7 @@ data-height:10=10px/10*=最小10px,如果还有空间,则填满/auto=自动填�
                     }
                 }
                 if (/^[0-9]+\%$/.test(dh)) {
-                    target.height(innerHeight * parseInt(dh) / 100);
+                    target.height(contentHeight * parseInt(dh) / 100);
                 }
             };
             $.each(g1, caculate);
