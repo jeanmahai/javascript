@@ -3,10 +3,10 @@
     基于jquery
 
     通过设置attribute[data-template=true]来标示模板容器;
-    模板使用data-item=true,如:
+    模板使用data-template-item=true,如:
     <div data-template="true">
     <ul>
-    <script type="text/html" data-item="true">
+    <script type="text/html" data-template-item="true">
     <li>姓名:#[name]</li>
     </script>
     </ul>
@@ -14,7 +14,7 @@
     data-bind-model 设置绑定模式,目前只有一个值"dynamicobject",模版如下:
     <div id="tm" data-template="true">
     <ul>
-    <script type="text/html" data-item="true" data-bind-model="dynamicobject">
+    <script type="text/html" data-template-item="true" data-bind-model="dynamicobject">
     <li>#[{#pro}]--#[{pro}]</li>
     </script>
     </ul>
@@ -37,7 +37,7 @@
 
     特性:
     data-template:true|false
-    data-item:true|false
+    data-template-item:true|false
     data-bind-model:dynamicobject
 
     语法:
@@ -58,16 +58,21 @@
 
     **************************************************
     共享模版
-    不需要设置data-template和data-item,但是data-bind-model根据需要添加;
+    不需要设置data-template和data-template-item,但是data-bind-model根据需要添加;
     模版可以定义在任何地方,建议最好定义在header中;
     调用格式:
     $(模版).jtemplate(数据源,回调).appendTo($(容器));
+
+    ==============
+    v 1.0.1
+    模版容器不需要设置data-template=true;
+    容器的模版设置方式由data-item=true变为data-template-item=true;
     */
     var key = {
         dataSource: "datasource",
         handler: "handler",
         dataTemplate: "data-template",
-        dataItem: "data-item",
+        dataItem: "data-template-item",
         dataBindModel: "data-bind-model"
     };
     var bindModel = {
@@ -200,13 +205,13 @@
 
     $.fn.extend({
         setDataSource: function (ds, handler) {
-            if ($(this).attr(key.dataTemplate) != "true") return null;
+            //if ($(this).attr(key.dataTemplate) != "true") return null;
             $(this).data(key.dataSource, ds);
             $(this).data(key.handler, handler);
             return $(this);
         },
         dataBind: function () {
-            if ($(this).attr(key.dataTemplate) != "true") return;
+            //if ($(this).attr(key.dataTemplate) != "true") return;
 
             var item = $(this).find("[" + key.dataItem + "=true]");
 
@@ -231,8 +236,8 @@
             container.append(html);
         },
         emptyTmpl: function () {
-            if ($(this).attr(key.dataTemplate) != "true") return;
-            $(this).find("[data-item=true]").parent().find(":not([data-item=true])").remove();
+            //if ($(this).attr(key.dataTemplate) != "true") return;
+            $(this).find("[data-template-item=true]").parent().find(":not([data-template-item=true])").remove();
         },
         jtemplate: function (ds, handler) {
             var item = $(this);

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../libs/jq/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="../../libs/jqext/jtemplate.1.0.js" type="text/javascript"></script>
+    <script>
+        function Person(name,age) {
+            this.name = name;
+            this.age = age;
+        }
+        var p1 = new Person("jean", 27);
+        var listp = [];
+        listp.push(p1);
+        listp.push(new Person("jean2", 28));
+        listp.push(new Person("jean3", 28));
+    </script>
+</head>
+<body>
+    <div>
+        <h1>
+            绑定一个Object</h1>
+        <ul id="ul_bind_object">
+            <script type="text/html" data-template-item="true">
+                <li>姓名:#[name]</li>
+                <li>年龄:#[age]</li>
+            </script>
+        </ul>
+        <script>
+            $("#ul_bind_object").setDataSource(p1).dataBind();
+        </script>
+    </div>
+    <div>
+        <h1>
+            绑定一个List</h1>
+        <ul id="ul1">
+            <script type="text/html" data-template-item="true">
+                <li>姓名:#[name],年龄:#[age]</li>
+            </script>
+        </ul>
+        <script>
+            $("#ul1").setDataSource(listp).dataBind();
+        </script>
+    </div>
+    <div>
+        <h1>
+            绑定事件处理</h1>
+        <ul id="ul2">
+            <script type="text/html" data-template-item="true">
+                <li>姓名:#[name],年龄:#[age],Full:#[#item.getFullName({item})]</li>
+            </script>
+        </ul>
+        <script>
+            $("#ul2").setDataSource(listp, {
+                getFullName: function (i) {
+                    return i.item.name + " " + i.item.age;
+                }
+            }).dataBind();
+        </script>
+    </div>
+</body>
+</html>

@@ -71,6 +71,7 @@
     <Content Include="libs\jsext\window.requestAnimationFrame.js" />
     <Content Include="libs\tools\image-manager.yui.js" />
     <Content Include="test\jqext\autoheight.test.html" />
+    <Content Include="test\jqext\jtemplate.test.html" />
     <Content Include="test\jsext\array.remove.test.html" />
     <Content Include="test\jsext\guid.test.html" />
     <Content Include="test\jsext\string.format.test.html" />
