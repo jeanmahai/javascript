@@ -70,6 +70,7 @@
     <Content Include="libs\jsext\window.guid.js" />
     <Content Include="libs\jsext\window.requestAnimationFrame.js" />
     <Content Include="libs\tools\image-manager.yui.js" />
+    <Content Include="test\jqext\autoheight.test.html" />
     <Content Include="test\jsext\array.remove.test.html" />
     <Content Include="test\jsext\guid.test.html" />
     <Content Include="test\jsext\string.format.test.html" />
@@ -84,9 +85,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="test\jqext\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

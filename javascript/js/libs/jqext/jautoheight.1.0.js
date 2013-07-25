@@ -1,27 +1,44 @@
 ﻿
 /*
+
+version:1.0.0
 高度设置
-data-height:10=10px/10*=最小10px,如果还有空间,则填满/auto=自动填满/100%=百分比填充
+data-height:
+10=10px
+100%=百分比填充
+10*=最小10px,如果还有空间,则填满
+auto=自动填满
+
+version:1.0.1
+1.排除script的高度;
+2.排除容器的margin,padding,border的高度;
+3.添加layout的优先级;
+
 */
 (function () {
 
+    function _getPrevHeight(target) {
+        var h = 0;
+        target.prev().each(function () {
+            if ($(this).is("script")) return;
+            h += $(this).outerHeight();
+        });
+        return h;
+    }
+
+    function _getNextHeight(target) {
+        var h = 0;
+        target.next().each(function () {
+            if ($(this).is("script")) return;
+            h += $(this).outerHeight();
+        });
+        return h;
+    }
+
     var _layout = function (container) {
-        function _getPrevHeight(target) {
-            var h = 0;
-            target.prev().each(function () {
-                h += $(this).outerHeight();
-            });
-            return h;
-        }
-        function _getNextHeight(target) {
-            var h = 0;
-            target.next().each(function () {
-                if ($(this).is("script")) return;
-                h += $(this).outerHeight();
-            });
-            return h;
-        }
-        var fn = function () {
+        
+        
+        var _fn = function () {
             //#region 处理高度
             //数字
             var g1 = [];
@@ -90,8 +107,10 @@ data-height:10=10px/10*=最小10px,如果还有空间,则填满/auto=自动填�
             $.each(g4, caculate);
             //#endregion
         };
-        fn();
+        _fn();
     };
+
+
 
     $.fn.extend({
         layout: function () {
