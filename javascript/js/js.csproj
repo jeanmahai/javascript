@@ -91,6 +91,7 @@
     <Content Include="libs\jsext\window.requestAnimationFrame.js" />
     <Content Include="libs\tools\image-manager.yui.js" />
     <Content Include="test\jqext\autoheight.test.html" />
+    <Content Include="test\jqext\jloading.test.html" />
     <Content Include="test\jqext\jtemplate.test.html" />
     <Content Include="test\jqext\jui.test.html" />
     <Content Include="test\jsext\array.remove.test.html" />
