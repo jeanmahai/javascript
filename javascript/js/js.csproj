@@ -86,7 +86,7 @@
     <Content Include="libs\jsext\object-equal.js" />
     <Content Include="libs\jsext\string.format.js" />
     <Content Include="libs\jsext\string.prototy.trim.js" />
-    <Content Include="libs\tools\uri.js" />
+    <Content Include="libs\tools\Url.js" />
     <Content Include="libs\jsext\window.cancelRequestAnimationFrame.js" />
     <Content Include="libs\jsext\window.guid.js" />
     <Content Include="libs\jsext\window.requestAnimationFrame.js" />

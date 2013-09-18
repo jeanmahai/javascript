@@ -19,4 +19,9 @@
         }
     };
 }
+else {
+    if (console) {
+        console.warn("function [Array.prototype.remove] 已经存在");
+    }
+}
 
