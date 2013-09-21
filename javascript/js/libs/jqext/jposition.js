@@ -5,7 +5,6 @@ $.fn.extend({
     my:center/left/right/top/bottom (default:center)
     at:center/top/bottom/left/right (default:center)
     of:jquery object (default:window)
-    //mask:true/false (default:false)
     }
     */
     jposition: function (obj) {
@@ -30,22 +29,8 @@ $.fn.extend({
             css.top -= h2;
             css.left -= w2;
         }
-        //mask
-//        if (obj.mask === true) {
-//            var overlay = $("<div></div>");
-//            overlay.css({
-//                position: "absolute",
-//                top: (obj.of.offset() ? obj.of.offset().top : 0),
-//                left: (obj.of.offset() ? obj.of.offset().left : 0),
-//                opacity: 0.8,
-//                backgroundColor: "gray",
-//                zIndex: 99
-//            });
-//            me.css("z-index", 100);
-//            overlay.appendto(document.body);
-//            me.data("overlay", overlay);
-//        }
 
         me.css(css);
+        return me;
     }
 });

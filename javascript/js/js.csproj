@@ -51,10 +51,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="imgs\preloader-w8-cycle-black.gif" />
+    <Content Include="imgs\preloader-w8-line-black.gif" />
     <Content Include="libs\jqext\j.footer.bottom.js" />
     <Content Include="libs\jqext\jautoheight.1.0.js" />
     <Content Include="libs\jqext\jcountdown.1.0.js" />
     <Content Include="libs\jqext\jloading.1.0.0.js" />
+    <Content Include="libs\jqext\jloading_v2.js" />
     <Content Include="libs\jqext\joverlay.js" />
     <Content Include="libs\jqext\jpop.1.0.0.js" />
     <Content Include="libs\jqext\jposition.js" />
@@ -99,6 +102,7 @@
     <Content Include="test\jqext\autoheight.test.html" />
     <Content Include="test\jqext\footer-to-bottom.htm" />
     <Content Include="test\jqext\jloading.test.html" />
+    <Content Include="test\jqext\jloading_v2.test.html" />
     <Content Include="test\jqext\joverlay.test.html" />
     <Content Include="test\jqext\jpop.test.html" />
     <Content Include="test\jqext\jposition.test.htm" />
