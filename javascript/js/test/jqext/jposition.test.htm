@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../libs/jq/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="../../libs/jqext/jposition.js" type="text/javascript"></script>
+</head>
+<body>
+    <div>
+        <button onclick="centerOfWin()">
+            center of window</button>
+        <button onclick="centerOfCon()">
+            center of #container</button></div>
+    <div id="container" style="width: 300px; height: 300px; background-color: gray;">
+    </div>
+    <div id="sub" style="background-color: red; width: 50px; height: 50px;">
+    </div>
+    <script>
+
+        function centerOfWin() {
+            $("#sub").jposition();
+        }
+
+        function centerOfCon() {
+            $("#sub").jposition({
+                of: $("#container")
+            });
+        }
+    </script>
+</body>
+</html>

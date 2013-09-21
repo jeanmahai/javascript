@@ -51,10 +51,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="libs\jqext\j.footer.bottom.js" />
     <Content Include="libs\jqext\jautoheight.1.0.js" />
     <Content Include="libs\jqext\jcountdown.1.0.js" />
     <Content Include="libs\jqext\jloading.1.0.0.js" />
     <Content Include="libs\jqext\jpop.1.0.0.js" />
+    <Content Include="libs\jqext\jposition.js" />
     <Content Include="libs\jqext\jquiext\jui.js" />
     <Content Include="libs\jqext\jtemplate.1.0.js" />
     <Content Include="libs\jqext\qunit-1.11.0.css" />
@@ -82,6 +84,8 @@
     <Content Include="libs\jsext\array.prototype.remove.js" />
     <Content Include="libs\jsext\date.prototype.format.js" />
     <Content Include="libs\jsext\function.prototype.bind.js" />
+    <Content Include="libs\jsext\javascript-namespace.js" />
+    <Content Include="libs\jsext\javascript-partial.js" />
     <Content Include="libs\tools\json2.js" />
     <Content Include="libs\jsext\object-equal.js" />
     <Content Include="libs\jsext\string.format.js" />
@@ -92,8 +96,10 @@
     <Content Include="libs\jsext\window.requestAnimationFrame.js" />
     <Content Include="libs\tools\image-manager.yui.js" />
     <Content Include="test\jqext\autoheight.test.html" />
+    <Content Include="test\jqext\footer-to-bottom.htm" />
     <Content Include="test\jqext\jloading.test.html" />
     <Content Include="test\jqext\jpop.test.html" />
+    <Content Include="test\jqext\jposition.test.htm" />
     <Content Include="test\jqext\jtemplate.test.html" />
     <Content Include="test\jqext\jui.test.html" />
     <Content Include="test\jsext\array.remove.test.html" />
