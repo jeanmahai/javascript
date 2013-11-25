@@ -1,0 +1,9 @@
+﻿*{ margin: 0px;padding: 0px;}
+
+.debug {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 200px;
+    border: solid 1px gray;
+}
