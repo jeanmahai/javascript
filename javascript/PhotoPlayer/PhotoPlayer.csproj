@@ -53,7 +53,11 @@
   <ItemGroup>
     <Content Include="img_urls.txt" />
     <Content Include="index.htm" />
+    <Content Include="res\global.css" />
+    <Content Include="res\jquery-1.9.1.min.js" />
     <Content Include="res\PhotoPlayer.js" />
+    <Content Include="res\window.cancelRequestAnimationFrame.js" />
+    <Content Include="res\window.requestAnimationFrame.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -3,13 +3,42 @@
 <head>
     <title></title>
     <link href="res/global.css" rel="stylesheet" type="text/css" />
+    <script src="res/jquery-1.9.1.min.js" type="text/javascript"></script>
     <script src="res/window.cancelRequestAnimationFrame.js" type="text/javascript"></script>
     <script src="res/window.requestAnimationFrame.js" type="text/javascript"></script>
     <script src="res/PhotoPlayer.js" type="text/javascript"></script>
 </head>
 <body>
     <div class="debug">
-        
+        <span id="txtImageCount"></span>
     </div>
+    <div >
+        <canvas id="canvas" width="800" height="600" style="background-color: gray;"></canvas>
+    </div>
+    <script type="text/javascript">
+        var pp = new PhotoPlayer();
+        pp.setImagesUrl("http://imgwww.heiguang.net/f/2013/1031/20131031112832845.jpg,http://imgwww.heiguang.net/f/2012/0917/20120917103745792.jpg,http://imgwww.heiguang.net/f/2012/0917/20120917103745654.jpg,http://imgwww.heiguang.net/f/2012/0917/20120917103745641.jpg,http://imgwww.heiguang.net/f/2012/0917/20120917103745535.jpg,http://imgwww.heiguang.net/f/2012/0917/20120917103745750.jpg,http://imgwww.heiguang.net/f/2012/0917/20120917103745853.jpg,http://imgwww.heiguang.net/f/2012/0917/20120917103745167.jpg,http://imgwww.heiguang.net/f/2012/0917/20120917103746345.jpg");
+        pp.downloadImage();
+
+        //debug
+        var domDebug = $(".debug");
+        var domImageCount = $("#txtImageCount");
+        var timerDebug;
+        function updateDebug() {
+            domImageCount.text("当前已下载的图片:" + pp.downloadedImages.length + "张");
+            timerDebug = requestAnimationFrame(updateDebug);
+        }
+
+        updateDebug();
+
+        function testDrawImage() {
+            if (pp.downloadedImages.length <= 0) requestAnimationFrame(testDrawImage);
+            var img = pp.downloadedImages[0];
+            var canvas = pp.drawCache(img);
+            $(document.body).append(canvas);
+        }
+
+        testDrawImage();
+    </script>
 </body>
 </html>

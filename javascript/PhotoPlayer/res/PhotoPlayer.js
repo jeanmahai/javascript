@@ -5,35 +5,44 @@
 function PhotoPlayer() {
     this.downloadedImages = [];
     this.imagesUrl = [];
-    this.cacheCount = 5;
+    //this.cacheCount = 5;
+    this.minCount = 5;
+    this.canvas = null;
+    this.ctx = null;
+    this.startTime = Date.now();
+    this.duration = 1000;//1s
 }
 
 PhotoPlayer.prototype = {
     setImagesUrl: function (urls) {
-        this._urls = urls.split(",");
+        this.imagesUrl = urls.split(",");
     },
     setCacheCount: function (count) {
         this.cacheCount = count;
     },
+    setCanvas: function (c) {
+        this.canvas = c;
+        this.ctx = this.canvas.getContext("2d");
+    },
     downloadImage: function () {
         var me = this;
-        if (me.downloadedImages.length < me.cacheCount) {
-            var img = new Image();
-            img.onload = function () {
-                me.downloadedImages.push(this);
-                me.downloadImg();
-            };
-            img.onerror = function () {
-            };
-            img.src = me.imagesUrl.shift();
-        }
-        requestAnimationFrame(me.downloadImage);
-    },
-    startDownloadImages: function () {
-        var me = this;
-        if (me.downloadedImages.length < me.cacheCount) {
+        if (me.imagesUrl.length <= 0) return;
+        var img = new Image();
+        img.onload = function () {
+            me.downloadedImages.push(this);
             me.downloadImage();
-        }
-        requestAnimationFrame(me.startDownloadImages);
+        };
+        img.onerror = function () {
+        };
+        img.src = me.imagesUrl.shift();
+    },
+    drawCache: function (image) {
+        var canvas = document.createElement("canvas");
+        canvas.width = image.width;
+        canvas.height = image.height;
+
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(image, 0, 0);
+        return canvas;
     }
 };
