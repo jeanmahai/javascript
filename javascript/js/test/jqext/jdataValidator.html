@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../libs/jq/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="../../libs/jqext/jdataValidator.js" type="text/javascript"></script>
+</head>
+<body>
+<form>
+	<div id="divForm">
+		<ul>
+			<li><label>Name:</label><input type="text" data-validator="^[a-zA-Z0-9]{3,10}$" data-error="请输入数字或者字母,长度3~10"/></li>
+			<li><label>Age:</label><input type="text" data-validator="@age" data-error="请输入数字"/></li>
+			<li><button onclick="run(); return false;">validate</button></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		$.setValidator({
+			img:"",
+			rules:{
+				age:function(val){
+					return (/^[0-9]+$/).test(val);
+				}
+			}
+		});
+		function run(){
+			alert($("#divForm").validate());
+		}
+		$("#divForm").addMouseListener();
+	</script>
+</form>
+</body>
+</html>
