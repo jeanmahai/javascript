@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../libs/jq/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="jform.js" type="text/javascript"></script>
+</head>
+<body>
+    <form action="test.aspx" method="GET">
+        <input name="Name" value="jean" pattern="^[0-9]{1,2}$" />
+        <button onclick="subm();return false;">submit</button>
+        <input type="submit" value="submit2"/>
+    </form>
+    <script type="text/javascript">
+        function subm() {
+            $("form").request({
+                success: function (result) {
+                    alert(result.Name);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

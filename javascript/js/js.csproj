@@ -56,6 +56,7 @@
     <Content Include="libs\jqext\j.footer.bottom.js" />
     <Content Include="libs\jqext\jautoheight.1.0.js" />
     <Content Include="libs\jqext\jcountdown.1.0.js" />
+    <Content Include="libs\jqext\jdataValidator.js" />
     <Content Include="libs\jqext\jloading.1.0.0.js" />
     <Content Include="libs\jqext\jloading_v2.js" />
     <Content Include="libs\jqext\joverlay.js" />
@@ -94,13 +95,18 @@
     <Content Include="libs\jsext\object-equal.js" />
     <Content Include="libs\jsext\string.format.js" />
     <Content Include="libs\jsext\string.prototy.trim.js" />
+    <Content Include="libs\tools\placeholder.js" />
     <Content Include="libs\tools\Url.js" />
     <Content Include="libs\jsext\window.cancelRequestAnimationFrame.js" />
     <Content Include="libs\jsext\window.guid.js" />
     <Content Include="libs\jsext\window.requestAnimationFrame.js" />
     <Content Include="libs\tools\image-manager.yui.js" />
+    <Content Include="test\jform\jform.js" />
+    <Content Include="test\jform\jform.test.html" />
+    <Content Include="test\jform\test.aspx" />
     <Content Include="test\jqext\autoheight.test.html" />
     <Content Include="test\jqext\footer-to-bottom.htm" />
+    <Content Include="test\jqext\jdataValidator.html" />
     <Content Include="test\jqext\jloading.test.html" />
     <Content Include="test\jqext\jloading_v2.test.html" />
     <Content Include="test\jqext\joverlay.test.html" />
@@ -121,6 +127,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="test\jform\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test\jform\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
