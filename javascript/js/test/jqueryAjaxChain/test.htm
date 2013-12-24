@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../libs/jq/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="jAjaxChain.js" type="text/javascript"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        var chain = $.ajaxChain();
+        chain.add(function (res) {
+            console.info("pre response:" + res);
+            return {
+                url: "handler.aspx",
+                success: function (result) {
+                    console.info("result:" + result);
+                },
+                complete: function () {
+                    console.info("complete!");
+                    console.info("==================");
+                }
+            };
+        });
+        chain.add(function (res) {
+            console.info("pre response:" + res);
+            return {
+                url: "handler.aspx",
+                success: function (result) {
+                    console.info("result2:" + result);
+                },
+                complete: function () {
+                    console.info("complete!");
+                    console.info("==================");
+                }
+            };
+        });
+        chain.run();
+    </script>
+</body>
+</html>

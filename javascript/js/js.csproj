@@ -114,6 +114,9 @@
     <Content Include="test\jqext\jposition.test.htm" />
     <Content Include="test\jqext\jtemplate.test.html" />
     <Content Include="test\jqext\jui.test.html" />
+    <Content Include="test\jqueryAjaxChain\handler.aspx" />
+    <Content Include="test\jqueryAjaxChain\jAjaxChain.js" />
+    <Content Include="test\jqueryAjaxChain\test.htm" />
     <Content Include="test\jsext\array.remove.test.html" />
     <Content Include="test\jsext\guid.test.html" />
     <Content Include="test\jsext\string.format.test.html" />
@@ -133,6 +136,13 @@
     </Compile>
     <Compile Include="test\jform\test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test\jqueryAjaxChain\handler.aspx.cs">
+      <DependentUpon>handler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test\jqueryAjaxChain\handler.aspx.designer.cs">
+      <DependentUpon>handler.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
