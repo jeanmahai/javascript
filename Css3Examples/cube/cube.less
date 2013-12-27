@@ -1,0 +1,70 @@
+@cubeSize:100px;
+
+@-webkit-keyframes cubeRotateY{
+    from{
+        -webkit-transform:rotateY(0deg) translateZ(@cubeSize/2);
+    }
+    to{
+        -webkit-transform:rotateY(360deg) translateZ(@cubeSize/2);
+    }
+}
+
+.cube{
+    //循环动画,沿Y轴旋转,5s 完成一次
+    -webkit-animation:cubeRotateY 5s infinite;
+    //透视深度
+    -webkit-perspective:1000px;
+    //透视原点位置
+    -webkit-perspective-origin:50% 100px;
+    //转换样式3D模式,普通模式不能展示3D效果
+    -webkit-transform-style: preserve-3d;
+    position:relative;
+    height:@cubeSize;
+    width:@cubeSize;
+    left:200px;
+    -webkit-transform: translateZ(@cubeSize/2) ;
+    &>div{
+        width:@cubeSize;
+        height:@cubeSize;
+        position:absolute;
+    }
+    .face1{
+        background:red;
+        -webkit-transform-origin:center bottom;
+        left:0px;
+        top:-@cubeSize;
+        -webkit-transform:rotateX(90deg);
+    }
+    .face2{
+        background:blue;
+        top:0px;
+        left:0px;
+    }
+    .face3{
+        background:green;
+        -webkit-transform-origin:center top;
+        top:@cubeSize;
+        left:0px;
+        -webkit-transform:rotateX(-90deg);
+    }
+    .face4{
+        background:gray;
+        top:0px;
+        left:0px;
+        -webkit-transform:translateZ(-@cubeSize);
+    }
+    .face5{
+        top:0px;
+        left:-@cubeSize;
+        -webkit-transform-origin:right center;
+        -webkit-transform:rotateY(-90deg);
+        background:yellow;
+    }
+    .face6{
+        top:0px;
+        left:@cubeSize;
+        -webkit-transform-origin:left center;
+        -webkit-transform:rotateY(90deg);
+        background:purple;
+    }
+}

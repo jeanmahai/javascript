@@ -1,0 +1,8 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
+@-webkit-keyframes cubeRotateY{from{-webkit-transform:rotateY(0deg) translateZ(50px)} to{-webkit-transform:rotateY(360deg) translateZ(50px)}}.cube{-webkit-animation:cubeRotateY 5s infinite;-webkit-perspective:1000px;-webkit-perspective-origin:50% 100px;-webkit-transform-style:preserve-3d;position:relative;height:100px;width:100px;left:200px;-webkit-transform:translateZ(50px)}.cube>div{width:100px;height:100px;position:absolute}
+.cube .face1{background:red;-webkit-transform-origin:center bottom;left:0px;top:-100px;-webkit-transform:rotateX(90deg)}
+.cube .face2{background:blue;top:0px;left:0px}
+.cube .face3{background:green;-webkit-transform-origin:center top;top:100px;left:0px;-webkit-transform:rotateX(-90deg)}
+.cube .face4{background:gray;top:0px;left:0px;-webkit-transform:translateZ(-100px)}
+.cube .face5{top:0px;left:-100px;-webkit-transform-origin:right center;-webkit-transform:rotateY(-90deg);background:yellow}
+.cube .face6{top:0px;left:100px;-webkit-transform-origin:left center;-webkit-transform:rotateY(90deg);background:purple}
